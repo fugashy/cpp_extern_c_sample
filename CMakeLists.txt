@@ -42,8 +42,10 @@ install(
   RUNTIME DESTINATION bin
   INCLUDES DESTINATION include
 )
-set_target_properties(${PROJECT_NAME}_use_simple_class
-  PROPERTIES INSTALL_RPATH "@executable_path/../lib")
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+  set_target_properties(${PROJECT_NAME}_use_simple_class
+    PROPERTIES INSTALL_RPATH "@executable_path/../lib")
+endif()
 
 install(
   DIRECTORY include/
