@@ -16,8 +16,6 @@ add_library(${PROJECT_NAME}_wrapper SHARED
 target_link_libraries(${PROJECT_NAME}_wrapper
   ${PROJECT_NAME}
 )
-#set_target_properties(${PROJECT_NAME}_wrapper
-#  PROPERTIES INSTALL_RPATH "@executable_path/../lib")
 install(
   TARGETS
     ${PROJECT_NAME}
